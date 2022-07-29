@@ -1,0 +1,49 @@
+/*********************
+****CALLOC WRAPPER****
+*********************/
+
+1) Provides Api to allocate dynamic memory using Calloc.
+   Api Name     - Calloc_Wrapper
+   In Parameter - (unsigned int )block and (unsigned int)size
+   Return       - Pointer to the allocated memory
+                  or NULL
+
+   
+2) Just one Api can free all the allocated memory.
+   Api Name - Free_All
+   In Parameter - void
+   Return       - 0x00 - SUCCESS
+                  0x99 - No memory allocated 
+   
+3) Every allocated memory will have the identifier, using that 
+   identifier we can free the corresponding memory.
+   Api Name     - Free
+   In Parameter - (unsigned int )Identifier
+   Return       - 0x00 - SUCCESS
+                  0x99 - No memory freed 
+   
+4) Displays all the Identifier.
+   Api Name     - Display
+   In Parameter - (unsigned int )Identifier
+   Return       - 0x00 - SUCCESS
+                  0x99 - No memory allocated 
+                  
+5) Address of the allocated memory
+   Api Name     - GetAllocated_Address
+   In Parameter - (unsigned int )Identifier
+   Return       - Pointer to the allocated memory
+                  or NULL
+                  
+
+Use case:
+1) Just use the Calloc_Wrapper() Api to allocate Dynamic memory, If you forget to free the 
+   memory then no harm done. Before exiting the program just call the Free_All() 
+   Api which frees all the allocated memory.
+   
+2) You can free the particular memory using Free() Api, which takes the Identifier
+   as the input parameter and free that particular memory.
+   
+3) Using the GetAllocated_Address() Api, which takes the Identifier as the input
+   parameter, returns the address of the particular allocated memory.
+  
+4) If required we can view all the Identifiers using the function Display().
