@@ -2,6 +2,11 @@
 ****CALLOC WRAPPER****
 *********************/
 
+Known limitations:
+1) Tested only on Windows platform.
+
+
+
 1) Provides Api to allocate dynamic memory using Calloc.
    Api Name     - Calloc_Wrapper
    In Parameter - (unsigned int )block and (unsigned int)size
